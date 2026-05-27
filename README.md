@@ -23,7 +23,7 @@ Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk 
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy_me_a_coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
 
-*Optional tip — helps keep the skills free and updated*
+*Tips keep the skills free and updated*
 
 </td>
 <td align="center" width="50%">
