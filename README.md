@@ -33,7 +33,7 @@ Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk 
 **⚡ Fastest path**
 
 ```text
-/add-plugin spsaucier/stock-swarm-plugin
+npx skills add spsaucier/stock-swarm-plugin --skill '*' -y
 ```
 
 Then ask your agent to run `trading-swarm` on a ticker.
