@@ -76,7 +76,7 @@ Plan-aware fallback strategy when on free:
 - **News and ticker count.** `/api/news?s=AAPL.US,MSFT.US,NVDA.US` is documented at "5 calls + 5 per ticker" — three tickers ≈ 20 calls. Loop one ticker at a time and you spend 30 calls; batch into a single multi-symbol request and you spend 20. Verify counters in the dashboard.
 - **MONEY tickers.** `EURIBOR3M.MONEY` via `/api/eod` is **10 calls**, not 1, because money-market data is a fundamental-grade feed. Use sparingly.
 - **`filter=last_*` does not reduce cost.** It only reduces response size. The whole indicator series is still computed server-side, charging the usual 5 calls.
-- **The token in the URL is logged.** Server access logs, shell history, terminal recordings, Cursor session JSON. Treat any pasted full-curl as a credential leak — rotate the key from the EODHD dashboard if it happens.
+- **The token in the URL is logged.** Server access logs, shell history, terminal recordings, agent session logs. Treat any pasted full-curl as a credential leak — rotate the key from the EODHD dashboard if it happens.
 
 ## Detecting plan / quota state
 

@@ -7,7 +7,7 @@
 ## Credentials
 
 - API keys (`EODHD_API_KEY`, broker credentials) belong in your local `.env` only — never commit them.
-- Copy `plugins/stock-swarm/mcp.example.json` to your project's `.cursor/mcp.json` if you use MCP; `.cursor/` is gitignored — never commit a file with real API keys in the URL or env.
+- Copy `plugins/stock-swarm/mcp.example.json` into your agent’s MCP config (path varies by tool — see README). Never commit MCP files that contain real API keys in URLs or env blocks.
 
 ## Reporting
 

@@ -103,7 +103,7 @@ print(r.json()[-5:])
 | Headline narrative, primary-source filings, analyst commentary | Web search + `trading-swarm/references/source-allowlist.md`. EODHD news is aggregated; cross-check material headlines against Tier-1 sources. |
 | Free-plan-only or no key | Stick to `/api/eod` (1 year), `/api/exchanges-list`, `/api/search`, `/api/news` and budget 20 calls/day. |
 
-> An `eodhd` MCP entry exists in `.cursor/mcp.json` but is intentionally disabled by default — it floods the tool context. Do not enable it just to call EODHD. This skill's REST-via-`.env` path is the supported route.
+> Some projects add an `eodhd` MCP server in agent MCP config — it is intentionally disabled by default here because it floods tool context. Do not enable it just to call EODHD. This skill's REST-via-`.env` path is the supported route.
 
 ## How the existing analysts should use this
 

@@ -1,7 +1,9 @@
 # Secrets and local config (never commit API keys or live MCP config)
 .env
-.cursor/mcp.json
+
+# Local MCP config — copy from plugins/stock-swarm/mcp.example.json; paths vary by agent
 .cursor/
+.vscode/mcp.json
 
 # User analysis output (consumer projects)
 analyses/

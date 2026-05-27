@@ -26,15 +26,17 @@ ROBINHOOD_PASSWORD=your_password
 
 Never commit `.env`. Session cache: `~/.tokens/robinhood.pickle` (robin_stocks, local disk).
 
-## Cursor MCP config
+## MCP config (any agent)
 
-Copy the plugin example (no secrets) to your project:
+Merge the `robinhood` entry from [mcp.example.json](../../../mcp.example.json) into **your agent’s MCP config**. Typical project paths:
 
-```bash
-cp plugins/stock-swarm/mcp.example.json .cursor/mcp.json
-```
+| Agent | MCP config location |
+|-------|---------------------|
+| Cursor | `.cursor/mcp.json` |
+| VS Code / Copilot | `.vscode/mcp.json` |
+| Claude Code / Codex / others | See your tool’s MCP docs — merge the same JSON block |
 
-Or create `.cursor/mcp.json` manually:
+Minimal `robinhood` server block:
 
 ```json
 {
@@ -48,11 +50,11 @@ Or create `.cursor/mcp.json` manually:
 }
 ```
 
-Reload Cursor → **Settings → MCP** → enable `robinhood`.
+Reload or restart your agent, then enable the `robinhood` MCP server in that tool’s MCP settings UI.
 
 ## Before running `portfolio-analyzer`
 
-1. Confirm `robinhood` MCP is green in Cursor.
+1. Confirm `robinhood` MCP is connected in your agent.
 2. Call `robinhood_get_portfolio` once — if "Not logged in", fix `.env` or approve device login.
 3. Prefer **export-only** workflow? Use `portfolio-export-analyzer` instead (no credentials).
 

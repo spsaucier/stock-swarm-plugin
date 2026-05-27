@@ -70,9 +70,9 @@ Inspired by <a href="https://github.com/TauricResearch/TradingAgents">TradingAge
 
    - **Option A — [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp)** (official, free tier):
      1. Get a free key at [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key)
-     2. `cp .env.example .env` and set `ALPHA_VANTAGE_API_KEY=...` (for your own reference)
-     3. `cp plugins/stock-swarm/mcp.example.json .cursor/mcp.json`
-     4. Open `.cursor/mcp.json` and replace `YOUR_ALPHA_VANTAGE_API_KEY` in the `alphavantage` URL with your real key (Cursor does not read `.env` into MCP URLs)
+     2. `cp .env.example .env` and set `ALPHA_VANTAGE_API_KEY=...` (handy reference; most agents do not inject `.env` into MCP URLs)
+     3. Merge the `mcpServers` block from [mcp.example.json](plugins/stock-swarm/mcp.example.json) into **your agent’s MCP config** ([paths by tool](#mcp-config-any-agent))
+     4. Replace `YOUR_ALPHA_VANTAGE_API_KEY` in the `alphavantage` URL with your real key
    - **Option B — `eodhd` skill**: add `EODHD_API_KEY` to `.env` and ask your agent to use the `eodhd` skill for OHLCV, fundamentals, news, and macro series ([EODHD docs](https://eodhd.com/financial-apis/)).
 
    Use **both** if you want MCP tools in-chat plus the skill’s REST recipes and call-budget guidance.
@@ -96,7 +96,7 @@ You do **not** need Robinhood or any specific provider.
 | Situation | What to use | What you provide |
 |-----------|-------------|------------------|
 | **Any broker** — export or spreadsheet | `portfolio-export-analyzer` | CSV/JSON export or pasted holdings table (symbol + quantity or market value) |
-| **Live book** — you have a read-only MCP for your broker | `portfolio-analyzer` | MCP wired in `.cursor/mcp.json` (example: [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp)) |
+| **Live book** — you have a read-only MCP for your broker | `portfolio-analyzer` | Broker MCP in your agent’s config (example: [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp)) |
 | **No export yet** | Ask your AI to help | “Here are my holdings: …” as a markdown table |
 
 **Prompt — portfolio from export (Fidelity, Schwab, Vanguard, IBKR, etc.):**
@@ -152,12 +152,41 @@ npx skills update   # later
 
 ### Manual copy
 
+Use [vercel-labs/skills](https://github.com/vercel-labs/skills) (recommended) or copy into your agent’s skills directory:
+
+| Agent | Typical project skills path |
+|-------|----------------------------|
+| Cursor, Codex, Copilot, OpenCode, Gemini CLI, … | `.agents/skills/` |
+| Claude Code | `.claude/skills/` |
+| Cursor (legacy) | `.cursor/skills/` |
+
 ```bash
-mkdir -p .agents/skills
+mkdir -p .agents/skills   # or .claude/skills — see table
 cp -R plugins/stock-swarm/skills/* .agents/skills/
 ```
 
-Cursor discovers project skills under `.agents/skills/` (see [vercel-labs/skills](https://github.com/vercel-labs/skills)). Some setups still use `.cursor/skills/` — copy there instead if yours does.
+---
+
+## MCP config (any agent)
+
+Copy [plugins/stock-swarm/mcp.example.json](plugins/stock-swarm/mcp.example.json) into **your tool’s MCP settings** — merge the `mcpServers` object if you already have other servers. Do not commit the file after you add real keys.
+
+| Agent | Where MCP config usually lives |
+|-------|--------------------------------|
+| **Cursor** | Project: `.cursor/mcp.json` · User: `~/.cursor/mcp.json` |
+| **Claude Code** | Project or user MCP config — see [Claude Code MCP](https://code.claude.com/docs/en/mcp) |
+| **Codex** | Codex MCP / plugin settings — see [Codex docs](https://developers.openai.com/codex/mcp/) |
+| **VS Code / Copilot** | `.vscode/mcp.json` in the project |
+| **Claude Desktop** | `claude_desktop_config.json` — see [Alpha Vantage MCP README](https://github.com/alphavantage/alpha_vantage_mcp) |
+
+```bash
+cp .env.example .env
+# Optional: record keys in .env (EODHD, Robinhood, Alpha Vantage reference)
+# Merge mcp.example.json into YOUR agent's MCP file (see table above)
+# Replace YOUR_ALPHA_VANTAGE_API_KEY in the alphavantage URL
+```
+
+**Robinhood (optional):** only for `portfolio-analyzer` — see [robinhood-mcp-setup.md](plugins/stock-swarm/skills/portfolio-analyzer/references/robinhood-mcp-setup.md).
 
 ---
 
@@ -169,16 +198,9 @@ Cursor discovers project skills under `.agents/skills/` (see [vercel-labs/skills
 - **Hosted endpoint:** `https://mcp.alphavantage.co/mcp?apikey=YOUR_KEY`
 - **Free API key:** [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key)
 
-```bash
-cp .env.example .env
-# Add ALPHA_VANTAGE_API_KEY=...  (optional record for you; MCP URL still needs the key pasted)
-cp plugins/stock-swarm/mcp.example.json .cursor/mcp.json
-# Edit .cursor/mcp.json — replace YOUR_ALPHA_VANTAGE_API_KEY in the alphavantage URL
-```
-
 Your agent can then pull quotes, fundamentals, news, and technicals through MCP while following `trading-swarm` verification rules.
 
-The hosted MCP URL puts your key in the query string (Alpha Vantage’s documented pattern). Treat `.cursor/mcp.json` as secret — it is gitignored. For a key-free config file, use the local `uvx` server from the [Alpha Vantage MCP README](https://github.com/alphavantage/alpha_vantage_mcp) instead.
+The hosted Alpha Vantage URL puts your key in the query string (their documented pattern). Keep MCP config files **out of git** — common project paths are gitignored (see [.gitignore](.gitignore)). Prefer the local `uvx` server from the [Alpha Vantage MCP README](https://github.com/alphavantage/alpha_vantage_mcp) if you do not want the key in a URL.
 
 ### EODHD skill (REST, no MCP required)
 
@@ -192,7 +214,7 @@ Ask explicitly: *“Use the eodhd skill for all cited prices on this run.”*
 
 | Layer | Best for |
 |-------|----------|
-| Alpha Vantage MCP | Interactive tool calls inside Cursor/Claude/Codex |
+| Alpha Vantage MCP | Interactive tool calls in any MCP-capable agent |
 | `eodhd` skill | Scripted pulls, caching, screener, international tickers |
 
 ---
