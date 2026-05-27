@@ -12,7 +12,7 @@ compatibility: User provides a portfolio export or holdings table. No MCP requir
 
 Whole-portfolio research from **user-supplied data** (broker export, spreadsheet, or pasted table). **No live API, no MCP, no credentials.**
 
-For a live book without sending creds to Trayd, use `portfolio-analyzer` with local [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) (`.env` on your machine only).
+For a live book, use `portfolio-analyzer` only if you have a read-only broker MCP (optional [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp)). **Most users should use this export skill** with any broker CSV.
 
 Tone: read [voice-and-tone.md](../trading-swarm/references/voice-and-tone.md). Present trade-offs, not verdicts.
 
