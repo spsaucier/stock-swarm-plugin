@@ -19,11 +19,11 @@ Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk 
 <tr>
 <td align="center" width="50%">
 
-**☕ If Stock Swarm saves you time**
+**Did Stock Swarm make you some money?**
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_me_a_coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
 
-*Tips help keep the skills updated and free*
+*Optional tip — helps keep the skills free and updated*
 
 </td>
 <td align="center" width="50%">
@@ -293,9 +293,11 @@ MIT — see [LICENSE](LICENSE).
 
 <div align="center">
 
-**Found this useful?** A coffee helps fund updates and new skills.
+**Did Stock Swarm make you some money?**
 
 [![Buy Me a Coffee](https://img.shields.io/badge/☕_Buy_me_a_coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
+
+<sub>Not financial advice — but if the research helped your P&amp;L, a coffee is appreciated.</sub>
 
 </div>
 
