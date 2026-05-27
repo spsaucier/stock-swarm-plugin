@@ -1,0 +1,24 @@
+{
+  "name": "stock-swarm-plugin",
+  "metadata": {
+    "description": "Multi-agent stock trading research skills for Claude Code, Cursor, Codex, and more",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "stock-swarm",
+      "description": "Trading desk simulation: analysts, bull/bear debate, trader, risk triangle, portfolio manager — portable Agent Skills for equity and multi-asset research.",
+      "homepage": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+      "tags": [
+        "trading",
+        "stocks",
+        "finance",
+        "multi-agent",
+        "portfolio",
+        "research",
+        "agent-skills"
+      ],
+      "source": "./plugins/stock-swarm"
+    }
+  ]
+}

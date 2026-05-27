@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "robinhood": {
+      "command": "uvx",
+      "args": ["robinhood-mcp"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}

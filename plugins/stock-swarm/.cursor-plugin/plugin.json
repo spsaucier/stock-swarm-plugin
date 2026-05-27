@@ -1,0 +1,20 @@
+{
+  "name": "stock-swarm",
+  "displayName": "Stock Swarm",
+  "version": "0.1.0",
+  "description": "Multi-agent trading research skills: technical, fundamental, sentiment, news, debate, risk, and portfolio synthesis.",
+  "homepage": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+  "repository": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "trading",
+    "stocks",
+    "finance",
+    "multi-agent",
+    "portfolio",
+    "research",
+    "agent-skills"
+  ]
+}

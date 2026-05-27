@@ -1,0 +1,33 @@
+{
+  "name": "stock-swarm",
+  "version": "0.1.0",
+  "description": "Multi-agent trading research skills: technical, fundamental, sentiment, news, debate, risk, and portfolio synthesis.",
+  "homepage": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+  "repository": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+  "license": "MIT",
+  "keywords": [
+    "trading",
+    "stocks",
+    "finance",
+    "multi-agent",
+    "portfolio",
+    "research",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Stock Swarm",
+    "shortDescription": "Multi-agent trading research skills for stocks and portfolios.",
+    "longDescription": "Stock Swarm is a suite of Agent Skills that mirror a trading desk: analysts gather evidence, bull and bear debate, a trader proposes actions, risk analysts stress the plan, and a portfolio manager issues a five-tier rating. Optional skills cover macro regime, market scans, portfolio health, EODHD data, and US tax education. Research and education only — not financial advice.",
+    "developerName": "Stock Swarm",
+    "category": "Finance",
+    "capabilities": ["Interactive", "Read"],
+    "websiteURL": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+    "defaultPrompt": [
+      "Run trading-swarm on AAPL, standard depth",
+      "Run market-opportunity-scan, moderate risk profile",
+      "Run portfolio-export-analyzer on my holdings export"
+    ],
+    "screenshots": []
+  }
+}
