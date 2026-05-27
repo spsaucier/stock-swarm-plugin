@@ -1,6 +1,7 @@
-# Secrets and local config
+# Secrets and local config (never commit API keys or live MCP config)
 .env
 .cursor/mcp.json
+.cursor/
 
 # User analysis output (consumer projects)
 analyses/

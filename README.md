@@ -25,6 +25,8 @@ Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk 
 
 *Tips keep the skills free and updated*
 
+<sub>Past performance ≠ future results. Not financial advice.</sub>
+
 </td>
 <td align="center" width="50%">
 
@@ -66,7 +68,11 @@ Inspired by <a href="https://github.com/TauricResearch/TradingAgents">TradingAge
 
 2. **Add market data** (recommended — makes cited numbers much stronger):
 
-   - **Option A — [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp)** (official, free tier): get a key at [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key), copy [mcp.example.json](plugins/stock-swarm/mcp.example.json) → `.cursor/mcp.json`, set `ALPHA_VANTAGE_API_KEY` in `.env`.
+   - **Option A — [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp)** (official, free tier):
+     1. Get a free key at [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key)
+     2. `cp .env.example .env` and set `ALPHA_VANTAGE_API_KEY=...` (for your own reference)
+     3. `cp plugins/stock-swarm/mcp.example.json .cursor/mcp.json`
+     4. Open `.cursor/mcp.json` and replace `YOUR_ALPHA_VANTAGE_API_KEY` in the `alphavantage` URL with your real key (Cursor does not read `.env` into MCP URLs)
    - **Option B — `eodhd` skill**: add `EODHD_API_KEY` to `.env` and ask your agent to use the `eodhd` skill for OHLCV, fundamentals, news, and macro series ([EODHD docs](https://eodhd.com/financial-apis/)).
 
    Use **both** if you want MCP tools in-chat plus the skill’s REST recipes and call-budget guidance.
@@ -147,8 +153,11 @@ npx skills update   # later
 ### Manual copy
 
 ```bash
-cp -R plugins/stock-swarm/skills/* .cursor/skills/
+mkdir -p .agents/skills
+cp -R plugins/stock-swarm/skills/* .agents/skills/
 ```
+
+Cursor discovers project skills under `.agents/skills/` (see [vercel-labs/skills](https://github.com/vercel-labs/skills)). Some setups still use `.cursor/skills/` — copy there instead if yours does.
 
 ---
 
@@ -162,12 +171,14 @@ cp -R plugins/stock-swarm/skills/* .cursor/skills/
 
 ```bash
 cp .env.example .env
-# Add ALPHA_VANTAGE_API_KEY=...
+# Add ALPHA_VANTAGE_API_KEY=...  (optional record for you; MCP URL still needs the key pasted)
 cp plugins/stock-swarm/mcp.example.json .cursor/mcp.json
-# Edit .cursor/mcp.json — paste your key into the alphavantage URL, or use local uvx (see AV README)
+# Edit .cursor/mcp.json — replace YOUR_ALPHA_VANTAGE_API_KEY in the alphavantage URL
 ```
 
 Your agent can then pull quotes, fundamentals, news, and technicals through MCP while following `trading-swarm` verification rules.
+
+The hosted MCP URL puts your key in the query string (Alpha Vantage’s documented pattern). Treat `.cursor/mcp.json` as secret — it is gitignored. For a key-free config file, use the local `uvx` server from the [Alpha Vantage MCP README](https://github.com/alphavantage/alpha_vantage_mcp) instead.
 
 ### EODHD skill (REST, no MCP required)
 
@@ -268,8 +279,10 @@ plugins/stock-swarm/
   skills/              # 24 skills
   mcp.example.json     # Alpha Vantage + optional Robinhood
   AGENTS.md
-skills -> plugins/stock-swarm/skills   # symlink for npx skills CLI
+skills -> plugins/stock-swarm/skills   # symlink for npx skills CLI (macOS/Linux)
 ```
+
+On **Windows**, if the symlink fails, run `npx skills add spsaucier/stock-swarm-plugin` from the repo root or point it at `plugins/stock-swarm/skills/`.
 
 ---
 

@@ -45,7 +45,7 @@ Multi-agent trading research as portable [Agent Skills](https://agentskills.io/h
 | Skill | Role |
 |-------|------|
 | `portfolio-export-analyzer` | Holdings from CSV/export (no API) |
-| `portfolio-analyzer` | Live Robinhood via local read-only MCP |
+| `portfolio-analyzer` | Live book via optional read-only broker MCP (e.g. Robinhood) |
 | `us-tax-advisor` | US tax education only — not tax advice |
 
 Shared references: `trading-swarm/references/` under this plugin's `skills/` tree (verification, allowlist, disclaimer, voice).

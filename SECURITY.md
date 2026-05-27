@@ -7,7 +7,7 @@
 ## Credentials
 
 - API keys (`EODHD_API_KEY`, broker credentials) belong in your local `.env` only — never commit them.
-- Copy `plugins/stock-swarm/mcp.example.json` to your project's `.cursor/mcp.json` if you use Robinhood MCP; keep real `mcp.json` out of version control.
+- Copy `plugins/stock-swarm/mcp.example.json` to your project's `.cursor/mcp.json` if you use MCP; `.cursor/` is gitignored — never commit a file with real API keys in the URL or env.
 
 ## Reporting
 
