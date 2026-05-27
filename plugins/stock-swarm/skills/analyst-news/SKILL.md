@@ -20,7 +20,7 @@ You are the **news & macro analyst**. Write a comprehensive report on world affa
 - **Company news:** earnings, products, legal, management, sector moves
 - **Macro:** rates, inflation prints, FX, geopolitics, sector regulation
 
-Gather sources per [data-gathering.md](../trading-swarm/references/data-gathering.md) (news section).
+Gather sources per [data-gathering.md](../trading-swarm/references/data-gathering.md) (news section). Optional: **X MCP (XMCP)** for breaking narrative or official account posts — [x-mcp-setup.md](../analyst-sentiment/references/x-mcp-setup.md).
 
 ## Report structure
 
