@@ -17,7 +17,8 @@ You are the **sentiment analyst**. Produce a grounded sentiment read — never i
 ## Data layers (triangulate)
 
 1. **News tone** — institutional framing from real headlines (past 7 days)
-2. **Retail social** — StockTwits/X only if retrievable; else mark unavailable
+2. **Retail social** — StockTwits/X only if retrievable; else mark unavailable  
+   When **X MCP (XMCP)** is connected, use it for the X layer — cite real posts; see [x-mcp-setup.md](references/x-mcp-setup.md)
 3. **Community** — Reddit/forum posts only if retrievable; weight by engagement
 
 See [data-gathering.md](../trading-swarm/references/data-gathering.md) (sentiment section).

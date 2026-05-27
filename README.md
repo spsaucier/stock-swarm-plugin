@@ -188,6 +188,8 @@ cp .env.example .env
 
 **Robinhood (optional):** only for `portfolio-analyzer` — see [robinhood-mcp-setup.md](plugins/stock-swarm/skills/portfolio-analyzer/references/robinhood-mcp-setup.md).
 
+**X / Twitter (optional):** for **`analyst-sentiment`**, **`analyst-news`**, and **`trader-momentum`** — connect [X MCP](https://docs.x.com/tools/mcp) so agents can search real posts instead of skipping the social layer. Merge `xmcp` + `x-docs` from [mcp.example.json](plugins/stock-swarm/mcp.example.json); setup: [x-mcp-setup.md](plugins/stock-swarm/skills/analyst-sentiment/references/x-mcp-setup.md).
+
 ---
 
 ## Market data setup (recommended)
@@ -210,12 +212,21 @@ The hosted Alpha Vantage URL puts your key in the query string (their documented
 
 Ask explicitly: *“Use the eodhd skill for all cited prices on this run.”*
 
+### X MCP (optional — sentiment & momentum)
+
+- **Docs:** [docs.x.com/tools/mcp](https://docs.x.com/tools/mcp)
+- **XMCP** (local): [xdevplatform/xmcp](https://github.com/xdevplatform/xmcp) → `http://127.0.0.1:8000/mcp` — search posts, users, engagement for the sentiment pipeline
+- **Docs MCP** (hosted): `https://docs.x.com/mcp` — search X API documentation from your agent
+
+Best paired with **`analyst-sentiment`** and **`trader-momentum`**. Credentials stay in the XMCP install (X Developer Console); see [x-mcp-setup.md](plugins/stock-swarm/skills/analyst-sentiment/references/x-mcp-setup.md). Use `X_API_TOOL_ALLOWLIST` for read-only research if you do not want the agent posting on X.
+
 ### Together
 
 | Layer | Best for |
 |-------|----------|
 | Alpha Vantage MCP | Interactive tool calls in any MCP-capable agent |
 | `eodhd` skill | Scripted pulls, caching, screener, international tickers |
+| X MCP (XMCP + optional x-docs) | Live social/narrative for sentiment and momentum catalyst checks |
 
 ---
 
@@ -232,6 +243,7 @@ Use Alpha Vantage MCP and eodhd for numbers. Run analysis-verifier last.
 
 ```
 Run analyst-macro for a quick regime read, then trader-momentum on NVDA — breakout setup, moderate risk.
+Use XMCP if connected for narrative/catalyst context on X; eodhd + Alpha Vantage for numbers.
 ```
 
 **Market scan → drill down**

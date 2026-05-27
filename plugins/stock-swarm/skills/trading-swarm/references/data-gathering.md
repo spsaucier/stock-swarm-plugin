@@ -53,7 +53,7 @@ Select **up to 8** complementary indicators; avoid redundant pairs (e.g. RSI + S
 Triangulate three layers (do not fabricate social posts):
 
 1. **News tone** — institutional framing from headlines
-2. **Retail social** — StockTwits/X/Reddit *only if you can retrieve real posts*; otherwise state "social feed unavailable"
+2. **Retail social** — StockTwits/X/Reddit *only if you can retrieve real posts*; for X, prefer **XMCP** when configured ([x-mcp-setup.md](../../analyst-sentiment/references/x-mcp-setup.md)); otherwise state "social feed unavailable"
 3. **Divergence** — where news and retail disagree
 
 Weight Reddit/forum posts by engagement when visible. Flag thin sample sizes.

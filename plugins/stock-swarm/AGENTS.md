@@ -22,6 +22,8 @@ Multi-agent trading research as portable [Agent Skills](https://agentskills.io/h
 | `analyst-macro` | Single-turn regime read (pair with momentum) |
 | `eodhd` | Structured EODHD REST data backbone |
 
+**Optional MCP (not in-repo credentials):** Alpha Vantage (quotes/fundamentals), Robinhood read-only (`portfolio-analyzer`), [X MCP](https://docs.x.com/tools/mcp) for live social (`analyst-sentiment`, `trader-momentum`) — see README and `analyst-sentiment/references/x-mcp-setup.md`.
+
 ## Research & trade
 
 | Skill | Role |
