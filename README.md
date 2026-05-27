@@ -1,12 +1,54 @@
-# Stock Swarm Plugin
+<div align="center">
 
-[![GitHub](https://img.shields.io/github/stars/spsaucier/stock-swarm-plugin?style=social)](https://github.com/spsaucier/stock-swarm-plugin)
+# Stock Swarm
 
-Multi-agent trading research as portable [Agent Skills](https://agentskills.io/home) — analysts, bull/bear debate, trader, risk triangle, portfolio manager. **Research and education only; not financial advice.**
+### Multi-agent trading research for Cursor, Claude Code, Codex, and 50+ agents
 
-Loosely inspired by [TradingAgents](https://github.com/TauricResearch/TradingAgents) (desk metaphor, no Python dependency), [honeypot](https://github.com/orientpine/honeypot) (verification, macro), and [maia-skill](https://github.com/Hainrixz/maia-skill) (multi-sector scan).
+Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk — analysts, bull/bear debate, trader, risk triangle, portfolio manager.
 
-**Support this project:** [Buy me a coffee](https://buymeacoffee.com/saucier)
+<br>
+
+[![GitHub stars](https://img.shields.io/github/stars/spsaucier/stock-swarm-plugin?style=flat-square&logo=github)](https://github.com/spsaucier/stock-swarm-plugin/stargazers)
+[![Agent Skills](https://img.shields.io/badge/skills-24-blue?style=flat-square)](plugins/stock-swarm/AGENTS.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Research only](https://img.shields.io/badge/⚠️-education%20%2F%20research%20only-orange?style=flat-square)](#disclaimer)
+
+<br>
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+**☕ If Stock Swarm saves you time**
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
+
+*Tips help keep the skills updated and free*
+
+</td>
+<td align="center" width="50%">
+
+**⚡ Fastest path**
+
+```text
+/add-plugin spsaucier/stock-swarm-plugin
+```
+
+Then ask your agent to run `trading-swarm` on a ticker.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<sub>
+Inspired by <a href="https://github.com/TauricResearch/TradingAgents">TradingAgents</a> ·
+<a href="https://github.com/orientpine/honeypot">honeypot</a> ·
+<a href="https://github.com/Hainrixz/maia-skill">maia-skill</a>
+</sub>
+
+</div>
 
 ---
 
@@ -246,6 +288,16 @@ For research and education only. Not financial, investment, trading, legal, or t
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+<div align="center">
+
+**Found this useful?** A coffee helps fund updates and new skills.
+
+[![Buy Me a Coffee](https://img.shields.io/badge/☕_Buy_me_a_coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/saucier)
+
+</div>
 
 ---
 
