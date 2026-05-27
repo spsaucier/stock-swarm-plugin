@@ -15,4 +15,4 @@
 
 ## Publishing
 
-Replace `YOUR_ORG` in marketplace and plugin manifests with your GitHub org before the first public release.
+Maintainer repo: https://github.com/spsaucier/stock-swarm-plugin

@@ -8,7 +8,7 @@
     {
       "name": "stock-swarm",
       "description": "Trading desk simulation: analysts, bull/bear debate, trader, risk triangle, portfolio manager — portable Agent Skills for equity and multi-asset research.",
-      "homepage": "https://github.com/YOUR_ORG/stock-swarm-plugin",
+      "homepage": "https://github.com/spsaucier/stock-swarm-plugin",
       "tags": [
         "trading",
         "stocks",

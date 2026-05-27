@@ -1,6 +1,6 @@
 # Changelog
 
-Release notes for the **stock-swarm** plugin. See [GitHub Releases](https://github.com/YOUR_ORG/stock-swarm-plugin/releases) when published.
+Release notes for the **stock-swarm** plugin. See [GitHub Releases](https://github.com/spsaucier/stock-swarm-plugin/releases) when published.
 
 ## 0.1.0 — 2026-05-26
 
