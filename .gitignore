@@ -5,9 +5,8 @@
 # User analysis output (consumer projects)
 analyses/
 
-# Local planning artifacts (not shipped with the plugin)
-docs/plans/
-docs/brainstorms/
+# Local docs (maintainer notes, plans — not shipped with the plugin)
+docs/
 
 # Python (legacy / local venv if present)
 .venv/
