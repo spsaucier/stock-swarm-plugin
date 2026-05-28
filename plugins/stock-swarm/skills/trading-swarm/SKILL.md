@@ -139,6 +139,7 @@ Load only the relevant skill (e.g. `analyst-technical`) when the user wants one 
 | `portfolio-export-analyzer` | Full book from export (no credentials) |
 | `portfolio-analyzer` | Live book via local read-only robinhood-mcp |
 | `market-opportunity-scan` | Multi-sector opportunity discovery (maia-skill style) |
+| `industry-thesis-research` | Industry map, value chain, thematic thesis before single-name work |
 | `opportunity-cost` | "Compared to what?" framing — cash, index, existing book, wait |
 | `us-tax-advisor` | Educational tax framing for trade decisions (not advice) |
 

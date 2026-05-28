@@ -246,6 +246,14 @@ Run analyst-macro for a quick regime read, then trader-momentum on NVDA — brea
 Use XMCP if connected for narrative/catalyst context on X; eodhd + Alpha Vantage for numbers.
 ```
 
+**Industry / supply chain**
+
+```
+Run industry-thesis-research: Who are NVIDIA's most vital public suppliers?
+Value chain mode, standard depth. Cite filings where possible.
+Then trading-swarm on the top 2 names from the vital nodes table.
+```
+
 **Market scan → drill down**
 
 ```
@@ -261,11 +269,12 @@ After trading-swarm on AAPL completes, reformat with equity-research-report.
 
 ---
 
-## Skills (24)
+## Skills (25)
 
 | Skill | When to use |
 |-------|-------------|
 | `trading-swarm` | Full pipeline orchestration |
+| `industry-thesis-research` | Value chain, sector map, thematic thesis |
 | `portfolio-export-analyzer` | **Any broker** — export or pasted holdings |
 | `portfolio-analyzer` | Live book via **your** read-only broker MCP |
 | `market-opportunity-scan` | Multi-sector discovery |

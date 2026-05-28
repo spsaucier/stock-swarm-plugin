@@ -9,6 +9,7 @@ Multi-agent trading research as portable [Agent Skills](https://agentskills.io/h
 | `trading-swarm` | Full pipeline: analysts → debate → trader → risk → portfolio manager |
 | `macro-swarm` | Optional deep macro pre-phase (multi-step) |
 | `market-opportunity-scan` | Multi-sector discovery + strategy synthesis |
+| `industry-thesis-research` | Industry map, value chain, thematic thesis (pre–single-name) |
 | `analysis-verifier` | Final QA on numbers, sources, tone |
 
 ## Analysts

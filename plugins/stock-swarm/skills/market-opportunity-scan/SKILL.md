@@ -25,6 +25,7 @@ Tone: read [voice-and-tone.md](../trading-swarm/references/voice-and-tone.md) be
 |-------|--------|
 | `market-opportunity-scan` | Multi-sector discovery + top picks (maia-style) |
 | `trading-swarm` | Deep single-ticker desk (TradingAgents-style) |
+| `industry-thesis-research` | Value chain, sector structure, thematic thesis (not cross-asset scan) |
 | `portfolio-export-analyzer` | Your holdings from an exported file |
 | `macro-swarm` | Macro-only pre-phase |
 
