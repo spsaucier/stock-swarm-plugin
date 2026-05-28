@@ -1,6 +1,9 @@
 # Secrets and local config (never commit API keys or live MCP config)
 .env
 
+# Local-only tooling (X MCP server clone, venv, credentials)
+local/
+
 # Local MCP config — copy from plugins/stock-swarm/mcp.example.json; paths vary by agent
 .cursor/
 .vscode/mcp.json
