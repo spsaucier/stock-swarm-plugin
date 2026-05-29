@@ -77,6 +77,8 @@ Inspired by <a href="https://github.com/TauricResearch/TradingAgents">TradingAge
 
    Use **both** if you want MCP tools in-chat plus the skill’s REST recipes and call-budget guidance.
 
+   - **Option C — [Robinhood Agentic MCP](https://robinhood.com/us/en/support/articles/agentic-trading-overview/)** (optional — Robinhood customers with Agentic access): add `https://agent.robinhood.com/mcp/trading` to your MCP config, authenticate, and open an Agentic account. See [Robinhood Agentic](#robinhood-agentic-mcp-official--live-book--optional-trading).
+
 3. **Paste this prompt** (replace the ticker):
 
    ```
@@ -96,7 +98,8 @@ You do **not** need Robinhood or any specific provider.
 | Situation | What to use | What you provide |
 |-----------|-------------|------------------|
 | **Any broker** — export or spreadsheet | `portfolio-export-analyzer` | CSV/JSON export or pasted holdings table (symbol + quantity or market value) |
-| **Live book** — you have a read-only MCP for your broker | `portfolio-analyzer` | Broker MCP in your agent’s config (example: [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp)) |
+| **Live book** — Robinhood Agentic account | `portfolio-analyzer` | [Robinhood Trading MCP](https://robinhood.com/us/en/support/articles/agentic-trading-overview/) — `https://agent.robinhood.com/mcp/trading` (OAuth; dedicated Agentic account) |
+| **Live book** — read-only on main Robinhood account | `portfolio-analyzer` | Community [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) via `uvx` + `ROBINHOOD_*` in `.env` |
 | **No export yet** | Ask your AI to help | “Here are my holdings: …” as a markdown table |
 
 **Prompt — portfolio from export (Fidelity, Schwab, Vanguard, IBKR, etc.):**
@@ -186,7 +189,17 @@ cp .env.example .env
 # Replace YOUR_ALPHA_VANTAGE_API_KEY in the alphavantage URL
 ```
 
-**Robinhood (optional):** only for `portfolio-analyzer` — see [robinhood-mcp-setup.md](plugins/stock-swarm/skills/portfolio-analyzer/references/robinhood-mcp-setup.md).
+**Robinhood Agentic (optional):** [Robinhood Agentic Trading](https://robinhood.com/agentic) connects your agent to a dedicated Robinhood account via the official **Trading MCP** — see [Agentic Trading overview](https://robinhood.com/us/en/support/articles/agentic-trading-overview/). Add to your MCP config:
+
+```json
+"robinhood": {
+  "url": "https://agent.robinhood.com/mcp/trading"
+}
+```
+
+Authenticate in your agent’s MCP settings, then complete Robinhood’s Agentic account onboarding (desktop). Your agent gets read access to accounts, positions, and orders; **trades can only be placed in the Agentic account** (equities). Pair with `portfolio-analyzer` for live book research. You remain responsible for agent-placed trades — see Robinhood’s risk disclosures.
+
+**Robinhood read-only (optional alternative):** community [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) for a local, read-only view of your main account — see [robinhood-mcp-setup.md](plugins/stock-swarm/skills/portfolio-analyzer/references/robinhood-mcp-setup.md).
 
 **X / Twitter (optional):** for **`analyst-sentiment`**, **`analyst-news`**, and **`trader-momentum`** — connect [X MCP](https://docs.x.com/tools/mcp) so agents can search real posts instead of skipping the social layer. Merge `xmcp` + `x-docs` from [mcp.example.json](plugins/stock-swarm/mcp.example.json); setup: [x-mcp-setup.md](plugins/stock-swarm/skills/analyst-sentiment/references/x-mcp-setup.md).
 
@@ -212,6 +225,19 @@ The hosted Alpha Vantage URL puts your key in the query string (their documented
 
 Ask explicitly: *“Use the eodhd skill for all cited prices on this run.”*
 
+### Robinhood Agentic MCP (official — live book & optional trading)
+
+- **Product:** [robinhood.com/agentic](https://robinhood.com/agentic)
+- **Setup guide:** [Agentic Trading overview](https://robinhood.com/us/en/support/articles/agentic-trading-overview/)
+- **Trading MCP endpoint:** `https://agent.robinhood.com/mcp/trading` (Streamable HTTP — no API key in config; OAuth when you connect)
+- **Tools:** `get_accounts`, `get_portfolio`, `get_equity_positions`, `get_equity_quotes`, `get_equity_orders`, `review_equity_order`, `place_equity_order`, `cancel_equity_order`, and more — see [Trading with your agent](https://robinhood.com/us/en/support/articles/trading-with-your-agent/)
+
+Robinhood’s [Model Context Protocol](https://robinhood.com/us/en/support/articles/agentic-trading-overview/) server lets MCP-capable agents (Cursor, Claude Code, Codex, ChatGPT, etc.) read your Robinhood data and act in a **separate Agentic brokerage account** you fund for the agent. Rolling out gradually — Robinhood emails when you have access.
+
+Best paired with **`portfolio-analyzer`** for whole-book snapshots. For research-only runs, ask your agent **not** to place orders. For execution, use explicit prompts and understand that agents can trade without per-order confirmation if you allow it.
+
+**vs community `robinhood-mcp`:** the official MCP is hosted by Robinhood, OAuth-based, and scoped to an Agentic account (can place equity orders there). [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) runs locally via `uvx`, uses username/password in `.env`, and is **read-only** on your existing account.
+
 ### X MCP (optional — sentiment & momentum)
 
 - **Docs:** [docs.x.com/tools/mcp](https://docs.x.com/tools/mcp)
@@ -226,6 +252,7 @@ Best paired with **`analyst-sentiment`** and **`trader-momentum`**. Credentials 
 |-------|----------|
 | Alpha Vantage MCP | Interactive tool calls in any MCP-capable agent |
 | `eodhd` skill | Scripted pulls, caching, screener, international tickers |
+| Robinhood Agentic MCP | Live Robinhood book via `portfolio-analyzer`; optional equity orders in Agentic account |
 | X MCP (XMCP + optional x-docs) | Live social/narrative for sentiment and momentum catalyst checks |
 
 ---
@@ -310,7 +337,7 @@ cp .env.example .env
 |----------|----------|
 | `ALPHA_VANTAGE_API_KEY` | [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp) |
 | `EODHD_API_KEY` | `eodhd` skill |
-| `ROBINHOOD_*` | Optional — `portfolio-analyzer` + [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) only |
+| `ROBINHOOD_*` | Optional — community [robinhood-mcp](https://github.com/verygoodplugins/robinhood-mcp) only (not needed for [Robinhood Agentic MCP](https://robinhood.com/us/en/support/articles/agentic-trading-overview/)) |
 
 ---
 
@@ -320,7 +347,7 @@ cp .env.example .env
 .claude-plugin/marketplace.json
 plugins/stock-swarm/
   skills/              # 24 skills
-  mcp.example.json     # Alpha Vantage + optional Robinhood
+  mcp.example.json     # Alpha Vantage + optional Robinhood (community read-only)
   AGENTS.md
 skills -> plugins/stock-swarm/skills   # symlink for npx skills CLI (macOS/Linux)
 ```
@@ -363,6 +390,7 @@ MIT — see [LICENSE](LICENSE).
 
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents) — multi-agent framework (independent skills distribution)
 - [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp) — recommended market data integration
+- [Robinhood Agentic Trading MCP](https://robinhood.com/us/en/support/articles/agentic-trading-overview/) — optional live book / Agentic account integration
 - [honeypot](https://github.com/orientpine/honeypot) — verification and macro patterns (MIT, loosely adapted)
 - [maia-skill](https://github.com/Hainrixz/maia-skill) — market scan patterns (MIT, loosely adapted)
 - [compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) — plugin packaging model (MIT)
