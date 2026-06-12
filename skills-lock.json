@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "skills": {
+    "analysis-verifier": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analysis-verifier/SKILL.md",
+      "computedHash": "2491d18aeb68f0238353888a6c1290888b88cc3ba49d4684c5e51b46923acb68"
+    },
+    "analyst-fundamentals": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analyst-fundamentals/SKILL.md",
+      "computedHash": "65c38ea7bf62f78e976cb82e9635ed26e3131d7bb5236b0c2bb498ac38b75386"
+    },
+    "analyst-macro": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analyst-macro/SKILL.md",
+      "computedHash": "e5544b7b8a54499cba3a10ed2be1e1ead406e0e567ad4d9ff229408475be7e94"
+    },
+    "analyst-news": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analyst-news/SKILL.md",
+      "computedHash": "8b6610557381815633531361a5265a338e0562efedcb6d771ca14cd96968f375"
+    },
+    "analyst-sentiment": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analyst-sentiment/SKILL.md",
+      "computedHash": "08b9a72fe1bef2a6fced84492c636e345fa16fe1708022a618339166df0e53ff"
+    },
+    "analyst-technical": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/analyst-technical/SKILL.md",
+      "computedHash": "bccb1d13431fa5f7c2e1ae72fd84274365c3c72567664e624e9529ea9abefd71"
+    },
+    "eodhd": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/eodhd/SKILL.md",
+      "computedHash": "141edad96bd55fa7a461d045f6bb6c75c3cad5fd8318a2006821b02dcbe8d383"
+    },
+    "equity-research-report": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/equity-research-report/SKILL.md",
+      "computedHash": "a50907a4ef9207180e1494664aefa0b48d0f7c9613dd45a10b8d0662a3a4614d"
+    },
+    "industry-thesis-research": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/industry-thesis-research/SKILL.md",
+      "computedHash": "2c0dc20556a2d956275f99d03f6299af638e87788414645da25de7e119796fb3"
+    },
+    "macro-swarm": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/macro-swarm/SKILL.md",
+      "computedHash": "82b3817b12e5dc93e266db0666a9f86e03e7388d27ebf58f0351ad23107b25b8"
+    },
+    "market-opportunity-scan": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/market-opportunity-scan/SKILL.md",
+      "computedHash": "8d8cb5074b498d2ab65391f5fa5427069d1c068cf69b69a59670f95b24fb24f7"
+    },
+    "opportunity-cost": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/opportunity-cost/SKILL.md",
+      "computedHash": "975379c1243a4347b9fd14bdf8f9ed8bc471cf490c210fbc8bd7a590afc57c15"
+    },
+    "portfolio-analyzer": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/portfolio-analyzer/SKILL.md",
+      "computedHash": "b871c21a0f11b335cec1ea42e41439630a033357b0166a659b3ddb3a9c994f88"
+    },
+    "portfolio-export-analyzer": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/portfolio-export-analyzer/SKILL.md",
+      "computedHash": "5873b521b87c25b4974ad5f293abaa5fd8b9f057420fc8bbe70b0c9e28328829"
+    },
+    "portfolio-manager": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/portfolio-manager/SKILL.md",
+      "computedHash": "0fbd806804e3cc2029ed73894935db62bcc4ab0485522b7caef3fabaaf153874"
+    },
+    "research-manager": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/research-manager/SKILL.md",
+      "computedHash": "159efb6a8103a7230ec1cd5437d7a2f21583d9cb52aa121deed9dedf37a992d3"
+    },
+    "researcher-bear": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/researcher-bear/SKILL.md",
+      "computedHash": "56daa4cff88cc6c8837d0c16608a17fe2875fcadc1a2ec4e97562cf1bf53ad86"
+    },
+    "researcher-bull": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/researcher-bull/SKILL.md",
+      "computedHash": "17b3d74bdd7a15cfd6454a27c6102ea4566e500480d1b723d0803d1802cf9346"
+    },
+    "risk-aggressive": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/risk-aggressive/SKILL.md",
+      "computedHash": "b7b099e24a57bf9ed4144e879deff989f31aa9985080fd87ff39004b62bf238d"
+    },
+    "risk-conservative": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/risk-conservative/SKILL.md",
+      "computedHash": "133661e554a1247d7f956f526543acf6bc3261b287744bb9990fd5b5a5402b77"
+    },
+    "risk-neutral": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/risk-neutral/SKILL.md",
+      "computedHash": "48f449ba2d31f0488c6113c91cc0fd03e8f87f3cf24891c47af06c2c7cfd748e"
+    },
+    "trader": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/trader/SKILL.md",
+      "computedHash": "b3cd2207ea1d92edda2636d876fcd0b2fc207f8f91f234c3a6a4707c200161d7"
+    },
+    "trader-momentum": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/trader-momentum/SKILL.md",
+      "computedHash": "efa5198edc05122c210e12b259c46ca1bdffa2ba90290c7036fe8962f371e7f6"
+    },
+    "trading-swarm": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/trading-swarm/SKILL.md",
+      "computedHash": "4e3367f779af5c8ee7d20acddf2daa05b0d0cd93a0e6dea111fc8ca164527f70"
+    },
+    "us-tax-advisor": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/us-tax-advisor/SKILL.md",
+      "computedHash": "51c7f654560edaecbf367c940a67caf0f600fce0b663cf60519e8bd4b3b6618a"
+    },
+    "persona-swarm": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-swarm/SKILL.md",
+      "computedHash": "69e87a6bc8554c348440ee021372dd98d190ea19a8c668aefaf07884eb336100"
+    },
+    "persona-wsb": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-wsb/SKILL.md",
+      "computedHash": "31bab3d4e6f548a6056fc78083f0640959647e3b0618be5ea66f84c9c879d53e"
+    },
+    "persona-buffett": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-buffett/SKILL.md",
+      "computedHash": "b749bfe16acf33cae1896371ef7aa8c3cd5daa75e65fee2b1c5cf8029706d96d"
+    },
+    "persona-oneil": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-oneil/SKILL.md",
+      "computedHash": "16ba3f7987f0e126e86ecca1d6700af70de4ffe2feda6e7bfa2fd3efcbb1bddd"
+    },
+    "persona-burry": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-burry/SKILL.md",
+      "computedHash": "ae10e8cb85bc189b69d5fc7ab959eb4de90641a9781b55deb98a073b4a975ffb"
+    },
+    "persona-pelosi": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/persona-pelosi/SKILL.md",
+      "computedHash": "44e326b3fe13aab7bb78592d6fc66f4c64403764acb22b50f49e9b19f61fb692"
+    }
+  }
+}
