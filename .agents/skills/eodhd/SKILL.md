@@ -6,7 +6,7 @@ description: >-
   earnings/IPO/split calendar, screener, search, and macro (gov bonds, money market)
   using the `EODHD_API_KEY` already in project `.env`. Use as the numeric backbone
   for `analyst-technical`, `analyst-fundamentals`, `analyst-news`, `analyst-sentiment`,
-  `macro-swarm`, and `market-opportunity-scan` whenever cited prices or filings matter
+  `macro-swarm`, `market-opportunity-scan`, and `catalyst-calendar` whenever cited prices or filings matter
   more than web-search prose. Read-only. Never use for placing trades.
 metadata:
   data-provider: eodhd

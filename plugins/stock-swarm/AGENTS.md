@@ -6,7 +6,7 @@ Multi-agent trading research as portable [Agent Skills](https://agentskills.io/h
 
 | Skill | Role |
 |-------|------|
-| `trading-swarm` | Full pipeline: analysts → persona swarm → debate → trader → risk → portfolio manager |
+| `trading-swarm` | Full pipeline: analysts → catalyst calendar → persona swarm → debate → trader → risk → portfolio manager |
 | `macro-swarm` | Optional deep macro pre-phase (multi-step) |
 | `market-opportunity-scan` | Multi-sector discovery + strategy synthesis |
 | `industry-thesis-research` | Industry map, value chain, thematic thesis (pre–single-name) |
@@ -24,6 +24,14 @@ Multi-agent trading research as portable [Agent Skills](https://agentskills.io/h
 | `eodhd` | Structured EODHD REST data backbone |
 
 **Optional MCP (not in-repo credentials):** Alpha Vantage (quotes/fundamentals), Robinhood read-only (`portfolio-analyzer`), [X MCP](https://docs.x.com/tools/mcp) for live social (`analyst-sentiment`, `trader-momentum`) — see README and `analyst-sentiment/references/x-mcp-setup.md`.
+
+## Catalyst calendar (Phase 1.25)
+
+| Skill | Role |
+|-------|------|
+| `catalyst-calendar` | Dated timeline — earnings, OPEX, macro, milestones, conferences (utility, not a persona) |
+
+Runs after analysts, before persona swarm. Invoked on demand by `trader`, `trader-momentum`, and others.
 
 ## Persona swarm (Phase 1.5)
 

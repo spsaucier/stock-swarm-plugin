@@ -14,6 +14,26 @@ All analyst skills append a **Key signals** markdown table.
 | ... | Bullish / Bearish / Neutral | ... | High / Medium / Low |
 ```
 
+## Catalyst calendar
+
+```markdown
+## Catalyst calendar — {TICKER}
+
+**As-of:** {DATE}
+**Window:** {start} → {end}
+
+### Timeline
+
+| Date | Event | Category | Timing note | Source | Status |
+|------|-------|----------|-------------|--------|--------|
+
+### Next 14 days (action window)
+...
+
+### Timing implications (not a rating)
+...
+```
+
 ## Persona swarm — individual view
 
 Each persona skill ends with its labeled section (e.g. `## Buffett / Munger view — {TICKER}`) and a **Persona rating** line — not the final portfolio rating.

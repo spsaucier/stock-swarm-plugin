@@ -4,12 +4,12 @@
 
 ### Multi-agent trading research for Cursor, Claude Code, Codex, and 50+ agents
 
-Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk — analysts, bull/bear debate, trader, risk triangle, portfolio manager.
+Portable [Agent Skills](https://agentskills.io/home) that mirror a trading desk — analysts, **catalyst calendar**, five famous-investor lenses, bull/bear debate, trader, risk triangle, portfolio manager.
 
 <br>
 
 [![GitHub stars](https://img.shields.io/github/stars/spsaucier/stock-swarm-plugin?style=flat-square&logo=github)](https://github.com/spsaucier/stock-swarm-plugin/stargazers)
-[![Agent Skills](https://img.shields.io/badge/skills-24-blue?style=flat-square)](plugins/stock-swarm/AGENTS.md)
+[![Agent Skills](https://img.shields.io/badge/skills-32-blue?style=flat-square)](plugins/stock-swarm/AGENTS.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Research only](https://img.shields.io/badge/⚠️-education%20%2F%20research%20only-orange?style=flat-square)](#disclaimer)
 
@@ -84,10 +84,34 @@ Inspired by <a href="https://github.com/TauricResearch/TradingAgents">TradingAge
    ```
    Run trading-swarm on AAPL as of today, standard depth.
    Use Alpha Vantage MCP and/or the eodhd skill for cited prices and fundamentals.
+   Include catalyst-calendar and persona-swarm (default for stocks).
    Save output under analyses/ and run analysis-verifier before you finish.
    ```
 
 That’s enough for a full desk-style memo. No broker account required.
+
+---
+
+## Pipeline (standard stock run)
+
+```text
+macro-swarm? → analysts → catalyst-calendar → persona-swarm → bull/bear debate
+  → research-manager → trader → risk debate → portfolio-manager → analysis-verifier
+```
+
+| Phase | Skill(s) | Output |
+|-------|----------|--------|
+| 0 (optional) | `macro-swarm`, `analyst-macro` | Macro backdrop |
+| 1 | `analyst-technical` → sentiment → news → fundamentals | Four analyst reports |
+| 1.25 | **`catalyst-calendar`** | Dated timeline — earnings, OPEX, macro prints, milestones, conferences |
+| 1.5 | **`persona-swarm`** | WSB · Buffett · O'Neil · Burry · Pelosi lenses + synthesis |
+| 2–4 | debate → trader → risk → PM | Investment plan, proposal, final rating |
+
+**`catalyst-calendar`** is a utility skill (not a persona): it builds the event map other skills consume.
+
+**`persona-swarm`** runs five investing *personas* in parallel, then synthesizes agreement and tension before the bull/bear debate.
+
+Skip calendar and/or personas on **`quick`** depth, crypto-only runs, or when the user opts out.
 
 ---
 
@@ -106,7 +130,7 @@ You do **not** need Robinhood or any specific provider.
 
 ```
 Run portfolio-export-analyzer — standard depth.
-I'm attaching my holdings export. Flag concentration, earnings in the next 14 days,
+I'm attaching my holdings export. Flag concentration, earnings in the next 14 days (or run catalyst-calendar per name),
 and top 5 names by weight with one headline each. Cite sources with dates.
 ```
 
@@ -165,7 +189,7 @@ Use [vercel-labs/skills](https://github.com/vercel-labs/skills) (recommended) or
 
 ```bash
 mkdir -p .agents/skills   # or .claude/skills — see table
-cp -R plugins/stock-swarm/skills/* .agents/skills/
+cp -R plugins/stock-swarm/skills/* .agents/skills/   # copies symlinks; canonical tree is .agents/skills/
 ```
 
 ---
@@ -251,7 +275,7 @@ Best paired with **`analyst-sentiment`** and **`trader-momentum`**. Credentials 
 | Layer | Best for |
 |-------|----------|
 | Alpha Vantage MCP | Interactive tool calls in any MCP-capable agent |
-| `eodhd` skill | Scripted pulls, caching, screener, international tickers |
+| `eodhd` skill | Scripted pulls, caching, screener, earnings/calendar endpoints, international tickers |
 | Robinhood Agentic MCP | Live Robinhood book via `portfolio-analyzer`; optional equity orders in Agentic account |
 | X MCP (XMCP + optional x-docs) | Live social/narrative for sentiment and momentum catalyst checks |
 
@@ -264,6 +288,21 @@ Best paired with **`analyst-sentiment`** and **`trader-momentum`**. Credentials 
 ```
 Run trading-swarm on MSFT as of today, standard depth.
 Use Alpha Vantage MCP and eodhd for numbers. Run analysis-verifier last.
+```
+
+**Catalyst timing only (no full swarm)**
+
+```
+Run catalyst-calendar on NVDA as of today.
+Use eodhd calendar endpoints and analyst-style news search for product milestones and conferences.
+Forward window 90 days.
+```
+
+**One famous-investor lens**
+
+```
+Run persona-buffett on KO using the four analyst reports from a prior run
+(or run analysts first, then persona-buffett only).
 ```
 
 **Momentum swing**
@@ -296,11 +335,18 @@ After trading-swarm on AAPL completes, reformat with equity-research-report.
 
 ---
 
-## Skills (25)
+## Skills (32)
 
 | Skill | When to use |
 |-------|-------------|
 | `trading-swarm` | Full pipeline orchestration |
+| **`catalyst-calendar`** | **Dated event timeline** — earnings, OPEX, macro, milestones (utility; Phase 1.25) |
+| **`persona-swarm`** | **Five investor lenses** + synthesis (Phase 1.5) |
+| `persona-wsb` | High-beta / catalyst convexity lens |
+| `persona-buffett` | Buffett / Munger quality value lens |
+| `persona-oneil` | O'Neil CAN SLIM growth-technical lens |
+| `persona-burry` | Burry contrarian deep-value lens |
+| `persona-pelosi` | Policy flow & public STOCK Act disclosures (legal only) |
 | `industry-thesis-research` | Value chain, sector map, thematic thesis |
 | `portfolio-export-analyzer` | **Any broker** — export or pasted holdings |
 | `portfolio-analyzer` | Live book via **your** read-only broker MCP |
@@ -344,12 +390,13 @@ cp .env.example .env
 ## Repository layout
 
 ```
-.claude-plugin/marketplace.json
+.agents/skills/          # canonical skill source (32 skills)
 plugins/stock-swarm/
-  skills/              # 24 skills
-  mcp.example.json     # Alpha Vantage + optional Robinhood (community read-only)
+  skills/                # symlinks → .agents/skills/*
+  mcp.example.json       # Alpha Vantage + optional Robinhood (community read-only)
   AGENTS.md
 skills -> plugins/stock-swarm/skills   # symlink for npx skills CLI (macOS/Linux)
+analyses/                # optional session output from trading-swarm runs
 ```
 
 On **Windows**, if the symlink fails, run `npx skills add spsaucier/stock-swarm-plugin` from the repo root or point it at `plugins/stock-swarm/skills/`.
@@ -358,7 +405,7 @@ On **Windows**, if the symlink fails, run `npx skills add spsaucier/stock-swarm-
 
 ## Philosophy
 
-Each analysis should compound: cited numbers, calibrated confidence, explicit alternatives, and shared verification under `plugins/stock-swarm/skills/trading-swarm/references/`.
+Each analysis should compound: cited numbers, calibrated confidence, explicit alternatives, and shared verification under `trading-swarm/references/` (via `.agents/skills/trading-swarm/references/` or the plugin symlink).
 
 ---
 

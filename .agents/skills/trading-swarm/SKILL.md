@@ -49,6 +49,7 @@ macro-swarm? → trading-swarm → analysis-verifier → equity-research-report?
 | As-of date | Today |
 | Asset type | `stock` |
 | Analysts | All four |
+| Catalyst calendar | On (stocks; skip on `quick` or if user opts out) |
 | Persona swarm | On (stocks; skip on `quick` or if user opts out) |
 | Investment debate rounds | 2 (4 turns) |
 | Risk debate rounds | 2 (6 turns) |
@@ -75,9 +76,17 @@ Run `analyst-macro` at step 0 if a `macro-swarm` pre-phase wasn't used and macro
 
 Data rules: [references/data-gathering.md](references/data-gathering.md)
 
+## Phase 1.25 — Catalyst calendar (stocks, default on)
+
+Run `catalyst-calendar` after all four analysts complete and **before** `persona-swarm`. Builds a verified dated timeline (earnings, OPEX, macro prints, product milestones, conferences, etc.) for downstream timing context.
+
+**Skip when:** `quick` preset, crypto-only run, user opts out of timing ("no calendar"), or user only wants a single analyst report.
+
+Save: `04a-catalyst-calendar.md` per [session-output-protocol.md](references/session-output-protocol.md).
+
 ## Phase 1.5 — Persona swarm (stocks, default on)
 
-Run `persona-swarm` after all four analysts complete. Five lenses in parallel:
+Run `persona-swarm` after analysts and catalyst calendar. Five lenses in parallel:
 
 `persona-wsb` · `persona-buffett` · `persona-oneil` · `persona-burry` · `persona-pelosi`
 
@@ -147,6 +156,7 @@ Load only the relevant skill (e.g. `persona-buffett` or `analyst-technical`) whe
 | Skill | Role |
 |-------|------|
 | `macro-swarm` | Optional macro pre-phase |
+| `catalyst-calendar` | Dated event timeline (Phase 1.25) |
 | `persona-swarm` | Five famous-investor lenses + synthesis (Phase 1.5) |
 | `analysis-verifier` | Final QA pass |
 | `equity-research-report` | Institutional memo formatting |

@@ -35,7 +35,7 @@ Founder Jaime Rogozinski described the community as a place for **high-risk trad
 2. **Short interest & borrow** — squeeze *potential* (not certainty)
 3. **Options market** — elevated IV, put/call skew, OI clusters (if data available)
 4. **Social velocity** — mention growth, narrative stickiness (from sentiment report)
-5. **Catalyst calendar** — earnings, FDA, product launch, index inclusion within 2–8 weeks
+5. **Catalyst calendar** — dated events within 2–8 weeks (from [`catalyst-calendar`](../catalyst-calendar/SKILL.md), not invented)
 6. **Liquidity** — can the user actually get out? Spread, ADV, halts
 7. **Meme durability** — is this a one-day spike or a sustained story?
 
@@ -59,6 +59,7 @@ If the setup requires undefined risk to "work," the honest answer is **pass**.
 | Report | Weight | Look for |
 |--------|--------|----------|
 | Sentiment | **High** | Buzz, divergence from price, exhaustion |
+| Catalyst calendar | **High** | Dated binary events, OPEX, earnings within window |
 | Technical | **High** | Breakout, volume, extension from MAs |
 | News | **High** | Binary catalysts, headline risk |
 | Fundamentals | **Low–medium** | Only solvency / dilution / bankruptcy risk — ignore whether P/E is "fair" |

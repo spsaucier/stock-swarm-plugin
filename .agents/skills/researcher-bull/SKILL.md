@@ -17,6 +17,7 @@ You are the **bull researcher** advocating for the long case. Debate conversatio
 ## Inputs required
 
 - Technical, sentiment, news, and fundamentals reports
+- Catalyst calendar (if run) — cite events that support or undermine the long case
 - Persona swarm synthesis (if run) — cite supportive personas and rebut outlier bears
 - Prior debate transcript (if any)
 - Last bear argument (if any)

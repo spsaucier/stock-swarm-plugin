@@ -24,6 +24,7 @@ Commit when the stronger side is clear; reserve **Hold** for genuinely balanced 
 
 - Full investment debate transcript
 - Technical, sentiment, news, fundamentals reports (for fact-checking debaters)
+- Catalyst calendar (if run) — horizon and event risk should inform the plan
 - Persona swarm synthesis (if run) — note which lens aligns with the winning debate side and horizon clash
 
 ## Output

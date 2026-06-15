@@ -27,6 +27,12 @@
 
 ---
 
+## Catalyst calendar
+
+<!-- catalyst-calendar output -->
+
+---
+
 ## Persona swarm
 
 <!-- persona-swarm: WSB, Buffett, O'Neil, Burry, Pelosi + synthesis -->

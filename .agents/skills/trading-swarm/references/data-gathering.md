@@ -62,6 +62,10 @@ Weight Reddit/forum posts by engagement when visible. Flag thin sample sizes.
 
 Fundamentals may be sparse. Emphasize on-chain metrics, ETF flows, regulatory news, and correlation to BTC/ETH if applicable. Label gaps explicitly.
 
+## Catalyst calendar (utility skill)
+
+After analysts complete in a stock swarm, run `catalyst-calendar` to merge dated events from news, fundamentals, EODHD `/api/calendar/*`, and IR sources. See [catalyst-calendar/SKILL.md](../../catalyst-calendar/SKILL.md).
+
 ## Cross-check rules
 
 - Two independent sources for material claims when possible

@@ -8,7 +8,8 @@ flowchart TD
   A1 --> A2[Sentiment analyst]
   A2 --> A3[News analyst]
   A3 --> A4[Fundamentals analyst]
-  A4 --> PS[Persona swarm]
+  A4 --> CC[Catalyst calendar]
+  CC --> PS[Persona swarm]
   PS --> DEBATE{Bull ↔ Bear debate}
   DEBATE --> RM[Research Manager]
   RM --> TR[Trader]
@@ -27,6 +28,12 @@ Run each skill in order, passing **all prior reports** as context:
 4. `analyst-fundamentals`
 
 Skip analysts the user excludes (minimum: technical + fundamentals OR news).
+
+## Phase 1.25 — Catalyst calendar
+
+Run `catalyst-calendar` after analysts. Default for stock swarms; skip on `quick` or user opt-out.
+
+Produces dated timeline for earnings, OPEX, macro, milestones, conferences. Hand to persona swarm, debate, and trader.
 
 ## Phase 1.5 — Persona swarm
 
@@ -86,6 +93,10 @@ Maintain one markdown artifact (e.g. `analysis-{TICKER}-{DATE}.md`) with section
 ...
 ### Fundamentals
 ...
+
+## Catalyst calendar
+
+<!-- catalyst-calendar output -->
 
 ## Persona swarm
 

@@ -32,6 +32,7 @@ Default: **on** for standard and deep stock swarms.
 ## Inputs (required)
 
 - `01-technical` through `04-fundamentals` (or inline analyst sections in `analysis.md`)
+- **`04a-catalyst-calendar.md`** or `## Catalyst calendar` section — run `catalyst-calendar` first if missing
 - Optional: `00-macro-outlook.md` from `macro-swarm` or `analyst-macro`
 - Ticker, as-of date, asset type
 
@@ -51,7 +52,7 @@ Run all five skills **in character**. Load each `SKILL.md` before writing that s
 | 4 | `persona-burry` | Contrarian deep value / forensic |
 | 5 | `persona-pelosi` | Policy catalysts + public STOCK Act disclosures |
 
-Each persona outputs per its template. **No persona issues the final portfolio rating.**
+Each persona outputs per its template. Pass **catalyst calendar** into every persona pass for timing context. **No persona issues the final portfolio rating.**
 
 ### Step 2 — Synthesizer
 
@@ -132,6 +133,7 @@ Load only the relevant skill (e.g. `persona-buffett`) when the user wants one fa
 | Doc | Purpose |
 |-----|---------|
 | [persona-frameworks.md](references/persona-frameworks.md) | Checklist anchors per persona |
+| [catalyst-calendar](../catalyst-calendar/SKILL.md) | Run upstream if calendar section missing |
 | [output-templates.md](../trading-swarm/references/output-templates.md) | Shared swarm headers |
 | [persona-pelosi/references/stock-act-disclosures.md](../persona-pelosi/references/stock-act-disclosures.md) | Legal guardrails for disclosure lens |
 

@@ -2,6 +2,8 @@
 
 Anchors for the five persona skills. Agents read the full `SKILL.md` per persona; this is a cheat sheet.
 
+**Timing:** use utility skill [`catalyst-calendar`](../catalyst-calendar/SKILL.md) — not a persona. Run after analysts in the standard swarm.
+
 ## persona-wsb — high-beta retail
 
 - **Horizon:** days–8 weeks

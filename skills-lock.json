@@ -186,6 +186,12 @@
       "sourceType": "github",
       "skillPath": "skills/persona-pelosi/SKILL.md",
       "computedHash": "44e326b3fe13aab7bb78592d6fc66f4c64403764acb22b50f49e9b19f61fb692"
+    },
+    "catalyst-calendar": {
+      "source": "spsaucier/stock-swarm-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/catalyst-calendar/SKILL.md",
+      "computedHash": "f8cfdd453bde47cddcda9273d00b72d8c840d7b989ad68557539731b34560ab1"
     }
   }
 }

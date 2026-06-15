@@ -19,6 +19,7 @@ This is the **default, balanced** trader. For a tactical, rules-based swing/brea
 
 - Investment plan (recommendation + rationale + strategic actions)
 - All four analyst reports
+- **Catalyst calendar** — run [`catalyst-calendar`](../catalyst-calendar/SKILL.md) first if missing; align entry/hold with dated events (especially earnings within hold window)
 
 ## Action scale
 
@@ -37,5 +38,6 @@ Follow [output-templates.md](../trading-swarm/references/output-templates.md) �
 ## Rules
 
 - Anchor reasoning in analyst evidence (2–4 sentences minimum).
+- Cite catalyst calendar when timing affects the proposal (e.g. "wait until after earnings" or "enter before OPEX vol crush").
 - Entry/stop/sizing are optional but encouraged when price data exists.
 - This proposal feeds the risk debate — be explicit about assumed risk.

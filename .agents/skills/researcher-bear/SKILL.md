@@ -17,6 +17,7 @@ You are the **bear researcher** making the case against the position. Debate con
 ## Inputs required
 
 - All four analyst reports
+- Catalyst calendar (if run) — cite events that add risk or invalidate timing
 - Persona swarm synthesis (if run) — cite skeptical personas and stress-test bullish consensus
 - Debate transcript
 - Last bull argument

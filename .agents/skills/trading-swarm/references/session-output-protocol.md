@@ -31,6 +31,7 @@ When the user wants machine-readable output, add JSON summaries **alongside** ma
 | `02-sentiment.md` | Analyst | analyst-sentiment |
 | `03-news.md` | Analyst | analyst-news |
 | `04-fundamentals.md` | Analyst | analyst-fundamentals |
+| `04a-catalyst-calendar.md` | Calendar | catalyst-calendar |
 | `04b-persona-swarm.md` | Personas | persona-swarm |
 | `05-debate.md` | Bull/bear | researchers |
 | `06-investment-plan.md` | Manager | research-manager |

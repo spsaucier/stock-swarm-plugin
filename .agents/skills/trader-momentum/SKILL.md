@@ -37,6 +37,7 @@ If the setup is weak or the regime is choppy, the **honest output is "no trade"*
 - **News analyst report** — looking for catalyst alignment or upcoming event risk
 - **Optional: X MCP (XMCP)** — narrative/catalyst buzz on X when the server is running; see [x-mcp-setup.md](../analyst-sentiment/references/x-mcp-setup.md). Not required if unavailable.
 - **Research manager investment plan** if available — directional bias
+- **Catalyst calendar** (required in swarm) — earnings, OPEX, milestones within holding window; run [`catalyst-calendar`](../catalyst-calendar/SKILL.md) if absent
 - **Risk profile** — conservative / moderate / aggressive; defaults to **moderate** if not stated
 - **Account size / dollar risk per trade** if available; otherwise output is expressed as **% of book**
 
